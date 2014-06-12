@@ -3,6 +3,8 @@
 // Falsy values in PHP
 // FALSE, 0 (int), 0.0 (float), '', '0', [], NULL
 
+// ==,  !=  (type insecure)
+// ===, !== (type secure)
 $test = 1;
 
 if (!$test) {
@@ -25,6 +27,7 @@ if ($month === 'January') {
 
 // ---------
 
+// Switch Case
 switch ($month) {
     case 'January':
         echo 'It is January. <br>';
