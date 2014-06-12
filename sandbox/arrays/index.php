@@ -1,4 +1,6 @@
 <?php
+
+// A simple array
 $tuts_sites = array(
     'nettuts+',
     'psdtuts+',
@@ -7,6 +9,8 @@ $tuts_sites = array(
     'mobiletuts+'
 );
 
+// Another simple array with
+// the modern bracket syntax
 $months = [
     'january',
     'february',
@@ -15,6 +19,7 @@ $months = [
     'may'
 ];
 
+// A simple associative array
 $tuts_sites = [
     'nettuts' => 'http://net.tutsplus.com',
     'psdtuts' => 'http://psd.tutsplus.com',
@@ -37,6 +42,19 @@ array_shift($tuts_sites);
 array_unshift($months, 'january');
 $tuts_sites = ['nettuts' => 'http://net.tutsplus.com'] + $tuts_sites;
 
+
+// A simple multidimensional associative array
+$persons = array(
+    'Person1' => array(
+        'Name'  => 'Marco',
+        'Alter' => 22
+    ),
+    'Person2' => array(
+        'Name'  => 'Lars',
+        'Alter' => 26
+    )
+);
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -49,6 +67,7 @@ $tuts_sites = ['nettuts' => 'http://net.tutsplus.com'] + $tuts_sites;
 <ul>
     <?php
 
+    // echo something for each month in the array
     foreach ($months as $month) {
         echo '<li>' . $month . '</li>';
     }
@@ -67,6 +86,24 @@ $tuts_sites = ['nettuts' => 'http://net.tutsplus.com'] + $tuts_sites;
             <a href="<?= $url; ?>"><?= ucwords($name) ?>+</a>
         </li>
     <?php endforeach ?>
+</ul>
+
+<ul>
+    <?php
+
+    // Access a multidimensional array with foreach
+    // ----
+    // Access the first level
+    foreach ($persons as $person => $personData) {
+        echo '<li>' . $person . '<ul>';
+
+        // Access the second level
+        foreach ($personData as $attributeName => $attributeValue) {
+            echo '<li>' . $attributeName . ': ' . $attributeValue . '</li>';
+        }
+        echo '</ul></li>';
+    }
+    ?>
 </ul>
 </body>
 </html>
