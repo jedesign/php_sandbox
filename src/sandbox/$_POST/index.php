@@ -32,7 +32,7 @@ MSG;
     $header .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 
     $header .= 'From: PHP Course Mailer <noreply@phpcourse.local>' . "\r\n";
-    $header .= 'Reply-To: '. $_POST['name'] . '<'.$_POST['email'].'>' . "\r\n";
+    $header .= 'Reply-To: ' . $_POST['name'] . '<' . $_POST['email'] . '>' . "\r\n";
 
     if (mail($mailto, $subject, $message, $header)) {
         $status = 'Thanks for the mail.';
