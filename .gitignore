@@ -1,1 +1,6 @@
 .idea/
+.DS_Store
+Vagrantfile
+puphpet/
+.vagrant/
+html/
