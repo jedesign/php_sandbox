@@ -2,4 +2,4 @@
 
 // Because no db is available, we hardcode this values
 define('USERNAME', 'mrieser');
-define('PASSWORD', '1234');
+define('PASSWORD', sha1('1234'));

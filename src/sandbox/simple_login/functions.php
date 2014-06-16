@@ -5,5 +5,5 @@ function isLogedIn() {
 }
 
 function validateUserCreds($username, $password) {
-    return ($username === USERNAME && $password === PASSWORD);
+    return ($username === USERNAME && sha1($password) === PASSWORD);
 }
